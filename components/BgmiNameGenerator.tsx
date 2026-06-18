@@ -197,7 +197,6 @@ export default function BgmiNameGenerator() {
           </div>
         </div>
 
-        <BgmiPreview previewText={previewText} />
       </div>
 
       <div className="results-grid grid grid-cols-1 gap-4 min-[600px]:grid-cols-2">

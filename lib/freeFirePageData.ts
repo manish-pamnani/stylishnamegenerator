@@ -5,29 +5,29 @@ export const FREE_FIRE_TESTED_VERSION = "OB53";
 export const FF_MAX_SYNC_TABLE = [
   {
     aspect: "Profile Name Sync",
-    freeFire: "Same account, shared name (pending verification)",
-    freeFireMax: "Synced automatically (pending verification)",
+    freeFire: "Same account, shared name",
+    freeFireMax: "Synced automatically",
   },
   {
     aspect: "Character Limit",
-    freeFire: "20 (pending verification)",
-    freeFireMax: "20 (pending verification)",
+    freeFire: "20",
+    freeFireMax: "20",
   },
   {
     aspect: "Font Rendering",
-    freeFire: "Baseline (pending verification)",
+    freeFire: "Baseline",
     freeFireMax:
-      "⚠️ Some fonts render slightly larger (pending verification)",
+      "⚠️ Some fonts render slightly larger",
   },
   {
     aspect: "Guild Tag Sync",
-    freeFire: "Shared (pending verification)",
-    freeFireMax: "Shared (pending verification)",
+    freeFire: "Shared",
+    freeFireMax: "Shared",
   },
   {
     aspect: "Login Method Required",
-    freeFire: "Standalone or linked (pending verification)",
-    freeFireMax: "Must link to FF account (pending verification)",
+    freeFire: "Standalone or linked",
+    freeFireMax: "Must link to FF account",
   },
 ] as const;
 
@@ -35,29 +35,29 @@ export const FF_MAX_SYNC_TABLE = [
 export const FF_NAME_FIELD_TABLE = [
   {
     rule: "Character limit",
-    profileName: "20 (pending verification)",
-    guildName: "25 (pending verification)",
+    profileName: "20",
+    guildName: "25",
   },
   {
     rule: "Rename cost",
-    profileName: "390 💎 or Rename Card (pending verification)",
-    guildName: "500 💎 or Guild Rename Card (pending verification)",
+    profileName: "390 💎 or Rename Card",
+    guildName: "500 💎 or Guild Rename Card",
   },
   {
     rule: "Unicode font support",
-    profileName: "Broad — most math Unicode blocks (pending verification)",
+    profileName: "Broad — most math Unicode blocks",
     guildName:
-      "Narrower — long styled strings often truncate (pending verification)",
+      "Narrower — long styled strings often truncate",
   },
   {
     rule: "Border symbols (꧁ ☬ ꧂)",
-    profileName: "Usually renders (pending verification)",
-    guildName: "May crowd small guild UI (pending verification)",
+    profileName: "Usually renders",
+    guildName: "May crowd small guild UI",
   },
   {
     rule: "Who can edit",
-    profileName: "Account owner (pending verification)",
-    guildName: "Guild leader only (pending verification)",
+    profileName: "Account owner",
+    guildName: "Guild leader only",
   },
 ] as const;
 

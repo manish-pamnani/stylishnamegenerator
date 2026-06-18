@@ -215,7 +215,6 @@ export default function FreeFireNameGenerator() {
           </div>
         </div>
 
-        <FreeFirePreview previewText={previewText} />
       </div>
 
       <div className="results-grid grid grid-cols-1 gap-4 min-[600px]:grid-cols-2">
