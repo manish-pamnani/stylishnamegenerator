@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import BgmiNameGenerator from "@/components/BgmiNameGenerator";
@@ -75,6 +76,49 @@ const FAQ_ITEMS = [
     question: "How many times can I change my style using a Rename Card?",
     answer:
       "Each Rename Card allows exactly one profile name change. New accounts typically receive one or two free renames through starter missions or level rewards, but these are not renewable. After free renames are used, every additional change requires purchasing a Rename Card from Shop → Treasures/Items (usually around 180 UC, subject to event pricing). Cards stack in your inventory — buying three cards means three separate renames — but there is no bulk discount for unused cards. Clan tag renames use a separate Clan Rename Card and do not share inventory with profile Rename Cards.",
+  },
+] as const;
+
+const BGMI_APPLY_STEPS = [
+  {
+    text: (
+      <>
+        From the main lobby, tap <strong>INVENTORY</strong> in the bottom menu
+        bar (far right).
+      </>
+    ),
+    image: "/bgmi/step-1-inventory.png",
+    alt: "BGMI main lobby with the Inventory button highlighted in the bottom menu",
+  },
+  {
+    text: (
+      <>
+        Open the <strong>Treasures / Items</strong> tab — the crate icon at the
+        bottom of the right-side inventory menu.
+      </>
+    ),
+    image: "/bgmi/step-2-treasures-tab.png",
+    alt: "BGMI inventory screen with the Treasures tab highlighted",
+  },
+  {
+    text: (
+      <>
+        Select your <strong>Rename Card</strong> and tap <strong>Use</strong>.
+      </>
+    ),
+    image: "/bgmi/step-3-rename-card.png",
+    alt: "BGMI inventory showing the Rename Card selected with the Use button",
+  },
+  {
+    text: (
+      <>
+        Paste your copied <strong>BGMI name style</strong> into the nickname
+        field, check the preview for boxes or truncation, then tap{" "}
+        <strong>OK</strong> to confirm.
+      </>
+    ),
+    image: "/bgmi/step-4-name-change.png",
+    alt: "BGMI Name Change dialog with the nickname input field and OK button",
   },
 ] as const;
 
@@ -312,26 +356,23 @@ export default function BgmiNameStylePageContent() {
         <h2 id="apply-heading" className="article-heading">
           How to Apply Your New Name Style in BGMI
         </h2>
-        <ol className="how-steps">
-          <li className="how-step">
-            Open BGMI and tap your <strong>Profile</strong> avatar in the top-left
-            corner of the main lobby screen.
-          </li>
-          <li className="how-step">
-            Tap the <strong>pencil icon</strong> next to your current name, or
-            go to <strong>Inventory → Items</strong> and equip a Rename Card if
-            prompted.
-          </li>
-          <li className="how-step">
-            Long-press the name field, paste your copied{" "}
-            <strong>BGMI name style</strong>, and check the live preview for
-            boxes or truncation.
-          </li>
-          <li className="how-step">
-            Confirm the change — this consumes one free rename or one
-            Rename Card from your inventory. Your new style appears in lobby,
-            kill feed, and squad list immediately.
-          </li>
+        <ol className="how-steps gap-6">
+          {BGMI_APPLY_STEPS.map((step, index) => (
+            <li key={step.image} className="how-step">
+              <p>
+                <span className="sr-only">Step {index + 1}: </span>
+                {step.text}
+              </p>
+              <Image
+                src={step.image}
+                alt={step.alt}
+                width={1024}
+                height={460}
+                sizes="(max-width: 768px) 100vw, 640px"
+                className="mt-3 w-full max-w-2xl rounded-xl border border-[var(--border)]"
+              />
+            </li>
+          ))}
         </ol>
         <p className="mt-4 text-sm text-[var(--cream-faint)]">
           Need more platforms? Browse our{" "}
