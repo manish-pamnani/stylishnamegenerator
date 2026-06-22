@@ -5,6 +5,12 @@ import CuratedNameGrid from "@/components/CuratedNameGrid";
 import FreestyleNicknameGenerator from "@/components/FreestyleNicknameGenerator";
 import RelatedTools from "@/components/RelatedTools";
 import { FREESTYLE_CURATED_NAMES } from "@/lib/freestyleCuratedNames";
+import {
+  NICKNAME_MYTHS_TABLE,
+  PLATFORM_CODEPOINT_TABLE,
+  RENDERING_COMPAT_TABLE,
+  UNICODE_VARIANT_EXAMPLES,
+} from "@/lib/freestylePageData";
 import { SITE_URL } from "@/lib/site";
 
 const PAGE_PATH = "/freestyle-nickname-generator";
@@ -268,6 +274,350 @@ export default function FreestyleNicknameGeneratorPage() {
               profiles, clean sans for minimal vibes, and weird Unicode for
               names nobody else has.
             </p>
+          </section>
+
+          <section aria-labelledby="rendering-heading">
+            <h2 id="rendering-heading" className="article-heading">
+              Why Your Freestyle Nickname May Look Broken on Some Platforms
+            </h2>
+            <p>
+              Most generators show you fancy text and say &quot;copy-paste
+              anywhere.&quot; They rarely explain why your carefully chosen{" "}
+              <strong>freestyle nickname</strong> sometimes renders as empty
+              boxes, question marks, or a completely different glyph on someone
+              else&apos;s screen. That is not a bug in your nickname — it is a
+              rendering environment problem.
+            </p>
+            <p>
+              Unicode styling depends entirely on whether the receiving app has
+              the glyph in its font stack. A Fraktur &quot;𝕳&quot; may render
+              as a tofu box (□) on older Android skins or low-RAM devices where
+              extended Unicode ranges are not loaded. Instagram&apos;s renderer
+              sometimes substitutes its own glyphs mid-name, so a cursive style
+              can look different between iOS and Android viewers. WhatsApp Web
+              and WhatsApp mobile often display the same Unicode name
+              differently — clean on desktop, stacked or collapsed on a 2019
+              mid-range phone. Discord&apos;s markdown layer can interfere with
+              certain ranges, especially fullwidth characters near formatting
+              characters.
+            </p>
+            <p>
+              The practical takeaway: some styles live in near-universal
+              &quot;safe zones&quot; (basic sans, small caps, short bordered
+              cores), while others are flex-only on flagship devices. Test
+              before you commit a rename card or publish a brand identity.
+            </p>
+            <div className="article-table-wrap overflow-x-auto">
+              <table className="article-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Style</th>
+                    <th scope="col">Safe on</th>
+                    <th scope="col">Risky on</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {RENDERING_COMPAT_TABLE.map((row) => (
+                    <tr key={row.style}>
+                      <td>{row.style}</td>
+                      <td>{row.safeOn}</td>
+                      <td>{row.riskyOn}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="article-table-footnote">
+              <strong className="text-[var(--cream)]">How to test:</strong> paste
+              your styled nickname into the target app&apos;s name field, then
+              ask a friend on a different OS to screenshot what they see. If
+              either side shows boxes, step down to a safer row in the table
+              above.
+            </p>
+          </section>
+
+          <section aria-labelledby="codepoint-heading">
+            <h2 id="codepoint-heading" className="article-heading">
+              Freestyle Nicknames and Hidden Character Limits — What the Counter
+              Doesn&apos;t Tell You
+            </h2>
+            <p>
+              This tool has no character counter because freestyle nicknames are
+              not tied to one platform — but that does not mean platforms have
+              no limits. The trap is invisible: Unicode characters outside the
+              Basic Multilingual Plane (like Mathematical Bold Script) can count
+              as <strong>two code points</strong> in many backend counters, not
+              one. A name that looks like 8 letters can register as 16 to
+              Instagram&apos;s server.
+            </p>
+            <aside className="expert-note" role="note">
+              <p className="expert-note__label">Expert note</p>
+              <p>
+                Platform counters measure <em>code points and combining
+                marks</em>, not what your eyes count. Decorative borders (꧁
+                ꧂), emoji, and stacked symbols each consume slots — sometimes
+                two per visible glyph. A visually short fancy nickname can hit
+                Instagram&apos;s 30-character wall while still looking minimal
+                on screen.
+              </p>
+              <p>
+                WhatsApp display names have a ~25-character soft limit, and push
+                notifications may truncate differently than your profile view.
+                BGMI and Free Fire count bytes and Unicode slots, not visible
+                characters — which is why our{" "}
+                <Link href="/bgmi-name-generator" className="article-link">
+                  BGMI
+                </Link>{" "}
+                and{" "}
+                <Link
+                  href="/free-fire-name-generator"
+                  className="article-link"
+                >
+                  Free Fire
+                </Link>{" "}
+                generators include dedicated counters.
+              </p>
+            </aside>
+            <p>
+              Before committing, check true character weight: paste into the
+              target field and read the app&apos;s own counter, or inspect code
+              points in your browser console with{" "}
+              <code className="article-inline-code">
+                [...&quot;YourNickname&quot;].map((c) =&gt;
+                c.codePointAt(0).toString(16))
+              </code>
+              . Length in that array is closer to what strict platforms enforce
+              than visible letter count.
+            </p>
+            <div className="article-table-wrap overflow-x-auto">
+              <table className="article-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Platform</th>
+                    <th scope="col">Visible limit</th>
+                    <th scope="col">Code point behaviour</th>
+                    <th scope="col">Risky styles</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {PLATFORM_CODEPOINT_TABLE.map((row) => (
+                    <tr key={row.platform}>
+                      <td>{row.platform}</td>
+                      <td>{row.visibleLimit}</td>
+                      <td>{row.codePointBehaviour}</td>
+                      <td>{row.riskyStyles}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section aria-labelledby="tradeoff-heading">
+            <h2 id="tradeoff-heading" className="article-heading">
+              Rarity vs Readability — The Real Tradeoff in Choosing a Fancy
+              Nickname Style
+            </h2>
+            <p>
+              Competing tools optimise for visual wow-factor because that is
+              what gets shared. Almost none help you decide — they show 50
+              fonts and let you scroll. Here is the decision layer most guides
+              skip.
+            </p>
+            <p>
+              <strong>The kill-feed problem:</strong> in BGMI, Free Fire, or COD
+              Mobile, your name appears for roughly 1.5 seconds in a kill
+              notification. Heavy Fraktur or upside-down text becomes
+              unreadable at speed — your &quot;scary&quot; name goes unnoticed.
+              Bold sans or a star-framed core word performs better when the goal
+              is instant recognition.
+            </p>
+            <p>
+              <strong>The recognition problem:</strong> on WhatsApp and
+              Instagram, contacts search you by display name. If your name is{" "}
+              <span className="converted-name text-base">꧁𝓢𝓱𝓪𝓭𝓸𝔀꧂</span>,
+              friends cannot type it to find you — they scroll manually. That
+              hurts growth-oriented social accounts.
+            </p>
+            <p>
+              <strong>The copy-paste cascade:</strong> when someone screenshots
+              or mentions you, they need copyable text. Combining-character-heavy
+              or mixed-direction styles break copy behaviour on some platforms,
+              making you invisible in user-generated content.
+            </p>
+            <p>
+              <strong>When maximum rarity is correct:</strong> pure in-game
+              presence with no social crossover, or aesthetic Instagram accounts
+              where the bio is visual art — not a searchable ID — benefit from
+              going extreme.
+            </p>
+            <p>
+              Use this framework: map your{" "}
+              <strong>Discoverability Need</strong> (high/low) against{" "}
+              <strong>Aesthetic Priority</strong> (high/low). Each quadrant
+              aligns with one of the vibe buckets in the generator above.
+            </p>
+            <div className="decision-matrix" role="list">
+              <div className="decision-matrix__cell" role="listitem">
+                <p className="decision-matrix__title">
+                  High discoverability · High aesthetic
+                </p>
+                <h3 className="decision-matrix__heading">
+                  🔥 Gaming / Aggressive
+                </h3>
+                <p>
+                  Bold borders with a short readable core — lobby presence
+                  without sacrificing searchability in squad chats.
+                </p>
+              </div>
+              <div className="decision-matrix__cell" role="listitem">
+                <p className="decision-matrix__title">
+                  High discoverability · Lower aesthetic
+                </p>
+                <h3 className="decision-matrix__heading">😎 Cool / Minimal</h3>
+                <p>
+                  Sans bold or small caps — stands out in saturated lobbies
+                  because most players chase maximum decoration.
+                </p>
+              </div>
+              <div className="decision-matrix__cell" role="listitem">
+                <p className="decision-matrix__title">
+                  Lower discoverability · High aesthetic
+                </p>
+                <h3 className="decision-matrix__heading">
+                  🌸 Soft / Aesthetic
+                </h3>
+                <p>
+                  Cursive script for bios, close-friend circles, and accounts
+                  where beauty matters more than being typed to find.
+                </p>
+              </div>
+              <div className="decision-matrix__cell" role="listitem">
+                <p className="decision-matrix__title">
+                  Lower discoverability · Maximum rarity
+                </p>
+                <h3 className="decision-matrix__heading">🎭 Weird / Unique</h3>
+                <p>
+                  Upside-down, strikethrough, squared — flex accounts and
+                  one-off tags where being unreproducible is the point.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section aria-labelledby="myths-heading">
+            <h2 id="myths-heading" className="article-heading">
+              Freestyle Nickname Myths — What Most Guides Get Wrong
+            </h2>
+            <p>
+              Surface-level advice repeats across every competing article. These
+              five corrections come from real post-click failures — the kind
+              users search for after a nickname &quot;doesn&apos;t work&quot;
+              even though the generator showed it perfectly.
+            </p>
+            <div className="article-table-wrap overflow-x-auto">
+              <table className="article-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Myth</th>
+                    <th scope="col">Reality</th>
+                    <th scope="col">Why it matters</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {NICKNAME_MYTHS_TABLE.map((row) => (
+                    <tr key={row.myth}>
+                      <td>{row.myth}</td>
+                      <td>{row.reality}</td>
+                      <td>{row.whyItMatters}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section aria-labelledby="homoglyphs-heading">
+            <h2 id="homoglyphs-heading" className="article-heading">
+              Advanced — Unicode Homoglyphs, Name Fingerprinting, and Why Two
+              Nicknames That Look Identical Are Technically Different
+            </h2>
+            <p>
+              This is the layer almost no nickname generator explains — because
+              it requires Unicode literacy, not SEO copy. It is also what
+              separates a utility page from an authoritative reference.
+            </p>
+            <aside className="expert-note" role="note">
+              <p className="expert-note__label">Core concept</p>
+              <p>
+                Latin &quot;a&quot; (U+0061), Mathematical Bold &quot;𝐚&quot;
+                (U+1D41A), and Cyrillic &quot;а&quot; (U+0430) can look nearly
+                identical on screen. Platforms treat them as completely different
+                characters. Two users can appear to share &quot;the same&quot;
+                nickname while never conflicting in a username database — a
+                loophole used deliberately to impersonate popular players, and
+                equally useful for building a unique identity fingerprint.
+              </p>
+            </aside>
+            <p>
+              <strong>Name fingerprinting:</strong> competitive players sometimes
+              mix Unicode ranges inside one word so the name looks common but
+              the byte sequence is unreproducible unless you know the exact
+              code points — protecting identity across platforms.
+            </p>
+            <p>
+              <strong>Impersonation risk:</strong> the same property enables
+              lookalike accounts. String-matching fails because the bytes differ
+              even when pixels match. If you manage a recognisable gaming or
+              social brand, verify your exact sequence — do not assume visual
+              similarity equals the same name.
+            </p>
+            <p>
+              <strong>Copy-paste ≠ identical:</strong> copying from this
+              generator preserves the exact Unicode sequence. Retyping what you
+              see produces different characters — effectively a different name.
+            </p>
+            <ul className="unicode-variant-list">
+              {UNICODE_VARIANT_EXAMPLES.map((variant) => (
+                <li key={variant.label} className="unicode-variant-list__item">
+                  <p className="unicode-variant-list__label">{variant.label}</p>
+                  <p className="unicode-variant-list__display">
+                    {variant.display}
+                  </p>
+                  <p className="unicode-variant-list__code">
+                    {variant.codePoints}
+                  </p>
+                  <p className="unicode-variant-list__notes">{variant.notes}</p>
+                </li>
+              ))}
+            </ul>
+            <p className="article-subheading">Power-user checklist</p>
+            <ul className="power-user-checklist">
+              <li>
+                Copy from the generator — never retype a styled nickname by hand.
+              </li>
+              <li>
+                Paste into a{" "}
+                <a
+                  href="https://util.unicode.org/UnicodeJsps/character.jsp"
+                  className="article-link"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Unicode character lookup
+                </a>{" "}
+                to verify each glyph&apos;s code point.
+              </li>
+              <li>
+                Save the exact string in a notes app if you reuse it across
+                BGMI, Free Fire, Instagram, and WhatsApp.
+              </li>
+              <li>
+                If brand protection matters, avoid homoglyph mixes others can
+                approximate visually — or register the exact byte sequence you
+                own.
+              </li>
+            </ul>
           </section>
 
           <section aria-labelledby="nickname-ideas-heading">
