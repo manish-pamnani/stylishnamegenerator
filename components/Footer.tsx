@@ -2,6 +2,19 @@ export default function Footer() {
   return (
     <footer className="site-footer mt-auto border-t">
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-6 px-4 py-8 sm:px-6">
+        <nav aria-label="Site tools and pages">
+          <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            <li>
+              <a
+                href="/stylish-marathi-fonts"
+                suppressHydrationWarning
+                className="footer-link"
+              >
+                Marathi Fonts
+              </a>
+            </li>
+          </ul>
+        </nav>
         <nav aria-label="Legal and information">
           <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             <li>

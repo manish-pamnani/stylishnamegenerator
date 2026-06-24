@@ -325,6 +325,10 @@ export default function InstagramStylishFontsContent() {
             Hindi stylish fonts
           </Link>
           {" · "}
+          <Link href="/stylish-marathi-fonts" className="intro-link">
+            stylish Marathi fonts
+          </Link>
+          {" · "}
           <Link
             href="/facebook-stylish-name-generator"
             className="intro-link"

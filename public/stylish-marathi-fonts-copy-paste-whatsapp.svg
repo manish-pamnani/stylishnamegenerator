@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141210"/>
+      <stop offset="100%" stop-color="#0a0908"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#25d366"/>
+      <stop offset="50%" stop-color="#c8ff00"/>
+      <stop offset="100%" stop-color="#00e8ff"/>
+    </linearGradient>
+    <linearGradient id="bubble" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1f4d36"/>
+      <stop offset="100%" stop-color="#173d2b"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#bg)"/>
+  <rect x="200" y="40" width="240" height="320" rx="28" fill="#0b1410" stroke="rgba(37,211,102,0.25)" stroke-width="3"/>
+  <rect x="290" y="52" width="60" height="8" rx="4" fill="rgba(250,246,239,0.1)"/>
+  <rect x="220" y="72" width="200" height="36" rx="0" fill="#128c7e"/>
+  <circle cx="238" cy="90" r="10" fill="rgba(250,246,239,0.2)"/>
+  <text x="258" y="94" fill="#faf6ef" font-family="system-ui,sans-serif" font-size="12" font-weight="600">Family Group</text>
+  <rect x="220" y="108" width="200" height="212" rx="0" fill="#0b1410"/>
+  <rect x="232" y="130" width="148" height="52" rx="10" fill="url(#bubble)" stroke="rgba(37,211,102,0.2)" stroke-width="1"/>
+  <text x="246" y="152" fill="#faf6ef" font-family="system-ui,sans-serif" font-size="11">Namaskar! Check this out</text>
+  <text x="246" y="172" fill="#c8ff00" font-family="system-ui,sans-serif" font-size="14" font-weight="600">Á .0> @ Â</text>
+  <rect x="260" y="200" width="120" height="44" rx="10" fill="url(#bubble)" stroke="rgba(37,211,102,0.2)" stroke-width="1"/>
+  <text x="274" y="227" fill="#00e8ff" font-family="system-ui,sans-serif" font-size="13"> 6A-GM> </text>
+  <rect x="40" y="120" width="140" height="56" rx="10" fill="#1c1916" stroke="rgba(37,211,102,0.35)" stroke-width="1"/>
+  <text x="110" y="152" text-anchor="middle" fill="#25d366" font-size="15">WhatsApp</text>
+  <rect x="460" y="120" width="140" height="56" rx="10" fill="#1c1916" stroke="rgba(200,255,0,0.3)" stroke-width="1"/>
+  <text x="530" y="152" text-anchor="middle" fill="#c8ff00" font-size="15">.0> @</text>
+  <rect x="40" y="220" width="140" height="56" rx="10" fill="#1c1916" stroke="rgba(0,232,255,0.3)" stroke-width="1"/>
+  <text x="110" y="252" text-anchor="middle" fill="#00e8ff" font-size="15">Unicode</text>
+  <rect x="460" y="220" width="140" height="56" rx="10" fill="#1c1916" stroke="rgba(37,211,102,0.3)" stroke-width="1"/>
+  <text x="530" y="252" text-anchor="middle" fill="#faf6ef" font-size="15">Copy Paste</text>
+  <rect x="0" y="380" width="640" height="4" fill="url(#accent)" opacity="0.7"/>
+  <text x="320" y="375" text-anchor="middle" fill="#a89f94" font-family="monospace" font-size="10" letter-spacing="3">STYLISH MARATHI FONTS</text>
+</svg>

@@ -267,6 +267,11 @@ export const IG_RELATED_TOOLS = [
     title: "Hindi Stylish Fonts",
     description: "Fancy Devanagari fonts for bios, captions, and status.",
   },
+  {
+    href: "/stylish-marathi-fonts",
+    title: "Marathi Unicode Fonts",
+    description: "Decorated Marathi text and fancy Latin styles for WhatsApp.",
+  },
 ] as const;
 
 export const WHATSAPP_SHARE_TEXT =

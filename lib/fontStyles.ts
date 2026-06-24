@@ -340,6 +340,45 @@ function applyMultiline(
     .join("\n");
 }
 
+/** Latin fancy fonts for Marathi users typing names in English. */
+const MARATHI_LATIN_STYLE_IDS = [
+  "cursive-script",
+  "bold-cursive",
+  "double-struck",
+  "sans-bold",
+  "circled",
+  "small-caps",
+  "fullwidth",
+  "fraktur-gothic",
+] as const;
+
+export function generateMarathiLatin(input: string): FontStyleResult[] {
+  const name = input.trim() || "Marathi";
+
+  const styleMaps: Record<
+    (typeof MARATHI_LATIN_STYLE_IDS)[number],
+    { name: string; map: Record<string, string> }
+  > = {
+    "cursive-script": { name: "Cursive Script", map: cursiveScript },
+    "bold-cursive": { name: "Bold Cursive", map: boldCursive },
+    "double-struck": { name: "Double Struck", map: doubleStruck },
+    "sans-bold": { name: "Sans Bold", map: sansBold },
+    circled: { name: "Circled", map: circled },
+    "small-caps": { name: "Small Caps", map: smallCaps },
+    fullwidth: { name: "Fullwidth", map: fullwidth },
+    "fraktur-gothic": { name: "Fraktur Gothic", map: frakturGothic },
+  };
+
+  return MARATHI_LATIN_STYLE_IDS.map((id) => {
+    const { name: styleName, map } = styleMaps[id]!;
+    return {
+      id,
+      name: styleName,
+      text: applyMap(name, map),
+    };
+  });
+}
+
 export function generateInstagramAll(input: string): FontStyleResult[] {
   const text = input.trim() === "" ? "YourName" : input;
 
