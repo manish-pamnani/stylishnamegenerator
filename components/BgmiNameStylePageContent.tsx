@@ -709,8 +709,6 @@ export default function BgmiNameStylePageContent() {
               title: "Freestyle Nickname Generator",
               description:
                 "Creative nicknames with vibe buckets — no character limit.",
-              description:
-                "Stylish FF fonts and symbols with copy-paste ready names.",
             },
             {
               href: "/instagram-stylish-fonts",

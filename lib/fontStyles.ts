@@ -317,6 +317,8 @@ export function applyFreestyleStyleById(
   styleId: string,
 ): FontStyleResult | undefined {
   return generateFreestyleAll(input).find((style) => style.id === styleId);
+}
+
 /** Aesthetic Unicode styles for Instagram bios, captions, and display names. */
 const INSTAGRAM_STYLE_IDS = [
   "cursive-script",
