@@ -1251,3 +1251,119 @@ body {
   color: var(--neon-lime);
   font-size: 0.85rem;
 }
+
+.article-figure {
+  margin: 1.35rem 0 1.5rem;
+}
+
+.article-figure__img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  background: var(--night-surface);
+}
+
+.article-figure__caption {
+  margin-top: 0.65rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--cream-faint);
+  text-align: center;
+}
+
+.image-slot__frame {
+  width: 100%;
+  min-height: 12rem;
+  border-radius: 0.75rem;
+  border: 2px dashed rgba(0, 232, 255, 0.28);
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      rgba(20, 18, 16, 0.95),
+      rgba(20, 18, 16, 0.95) 10px,
+      rgba(0, 232, 255, 0.03) 10px,
+      rgba(0, 232, 255, 0.03) 20px
+    );
+  display: flex;
+  align-items: stretch;
+}
+
+.image-slot__inner {
+  flex: 1;
+  padding: 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.image-slot__badge {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--neon-cyan);
+  margin: 0;
+}
+
+.image-slot__title {
+  font-size: 1rem;
+  color: var(--cream);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.image-slot__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  margin: 0;
+}
+
+.image-slot__file,
+.image-slot__dims {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--neon-lime);
+}
+
+.image-slot__brief {
+  margin: 0.15rem 0 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--cream-muted);
+}
+
+.image-slot__specs {
+  margin: 0.25rem 0 0;
+  padding-left: 1.1rem;
+  list-style: disc;
+}
+
+.image-slot__specs li {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--cream-faint);
+  margin-bottom: 0.25rem;
+}
+
+.image-slot__activate {
+  margin: 0.35rem 0 0;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  line-height: 1.65;
+  color: var(--cream-faint);
+}
+
+.image-slot__caption-preview,
+.image-slot__alt-preview {
+  margin: 0.55rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--cream-faint);
+}
+
+.image-slot__alt-preview {
+  font-style: italic;
+}
