@@ -1,3 +1,5 @@
+import { FREESTYLE_STYLE_IDS } from "@/lib/freestyleVibeBuckets";
+
 const LETTERS_LOWER = "abcdefghijklmnopqrstuvwxyz";
 const LETTERS_UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -304,6 +306,17 @@ export function generateFreeFireAll(input: string): FreeFireStyleResult[] {
     }));
 }
 
+const freestyleStyleIdSet = new Set<string>(FREESTYLE_STYLE_IDS);
+
+export function generateFreestyleAll(input: string): FontStyleResult[] {
+  return generateAll(input).filter((style) => freestyleStyleIdSet.has(style.id));
+}
+
+export function applyFreestyleStyleById(
+  input: string,
+  styleId: string,
+): FontStyleResult | undefined {
+  return generateFreestyleAll(input).find((style) => style.id === styleId);
 /** Aesthetic Unicode styles for Instagram bios, captions, and display names. */
 const INSTAGRAM_STYLE_IDS = [
   "cursive-script",

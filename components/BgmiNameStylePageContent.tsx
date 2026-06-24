@@ -702,6 +702,13 @@ export default function BgmiNameStylePageContent() {
             {
               href: "/free-fire-name-generator",
               title: "Free Fire Name Generator",
+              description: "FF-compatible fonts, symbols, and a 20-char counter.",
+            },
+            {
+              href: "/freestyle-nickname-generator",
+              title: "Freestyle Nickname Generator",
+              description:
+                "Creative nicknames with vibe buckets — no character limit.",
               description:
                 "Stylish FF fonts and symbols with copy-paste ready names.",
             },
