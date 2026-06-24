@@ -6,6 +6,15 @@ export default function Footer() {
           <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             <li>
               <a
+                href="/bgmi-symbols"
+                suppressHydrationWarning
+                className="footer-link"
+              >
+                BGMI Symbols
+              </a>
+            </li>
+            <li>
+              <a
                 href="/stylish-marathi-fonts"
                 suppressHydrationWarning
                 className="footer-link"

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { generateBgmiAll, type FontStyleResult } from "@/lib/fontStyles";
 import { BGMI_NAME_LIMIT, BGMI_SYMBOLS } from "@/lib/bgmiSymbols";
@@ -180,7 +181,12 @@ export default function BgmiNameGenerator() {
           </p>
 
           <div className="symbol-picker mt-4">
-            <p className="symbol-picker__label">Insert symbol at cursor</p>
+            <p className="symbol-picker__label">
+              Insert symbol at cursor — or browse{" "}
+              <Link href="/bgmi-symbols" className="intro-link">
+                BGMI symbols and special characters
+              </Link>
+            </p>
             <div className="symbol-picker__grid" role="group" aria-label="BGMI symbols">
               {BGMI_SYMBOLS.map((symbol) => (
                 <button

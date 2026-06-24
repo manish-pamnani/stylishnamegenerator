@@ -9,6 +9,7 @@ export const SITEMAP_PATHS = [
   "/freestyle-nickname-generator",
   "/instagram-stylish-fonts",
   "/stylish-marathi-fonts",
+  "/bgmi-symbols",
   "/about-us",
   "/contact-us",
   "/privacy-policy",

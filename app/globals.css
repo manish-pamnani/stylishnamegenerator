@@ -827,6 +827,99 @@ body {
   transform: scale(0.95);
 }
 
+.symbol-library__meta {
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  background: var(--night-surface);
+}
+
+.tested-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--neon-lime);
+  border: 1px solid rgba(200, 255, 0, 0.35);
+  background: rgba(200, 255, 0, 0.08);
+}
+
+.symbol-library__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(2.75rem, 1fr));
+  gap: 0.45rem;
+}
+
+.symbol-library__tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  background: var(--night-surface);
+  color: var(--cream);
+  transition:
+    border-color 0.2s,
+    background 0.2s,
+    box-shadow 0.2s,
+    transform 0.12s;
+}
+
+.symbol-library__glyph {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.symbol-library__tile:hover {
+  border-color: var(--neon-cyan);
+  background: var(--neon-cyan-dim);
+  transform: translateY(-1px);
+}
+
+.symbol-library__tile:active {
+  transform: scale(0.95);
+}
+
+.symbol-library__tile--copied {
+  border-color: var(--neon-lime);
+  background: rgba(200, 255, 0, 0.12);
+  box-shadow: 0 0 16px rgba(200, 255, 0, 0.2);
+}
+
+.copy-all-btn {
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  background: var(--surface-raised);
+  color: var(--cream-muted);
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition:
+    border-color 0.2s,
+    color 0.2s,
+    background 0.2s;
+}
+
+.copy-all-btn:hover {
+  border-color: var(--neon-cyan);
+  color: var(--cream);
+}
+
+.copy-all-btn--success {
+  border-color: var(--neon-lime);
+  color: var(--neon-lime);
+}
+
+.border-preview-table__preview {
+  word-break: break-word;
+  max-width: 20rem;
+}
+
 .bgmi-preview {
   display: flex;
   flex-direction: column;

@@ -621,6 +621,11 @@ export default function BgmiNameStylePageContent() {
           Build a custom <strong>BGMI name style</strong> by copying symbols
           one at a time, then stitching them around your nickname in the
           generator above. Click any character to copy it to your clipboard.
+          For 500+ tested symbols, borders, and combos, see our{" "}
+          <Link href="/bgmi-symbols" className="intro-link">
+            BGMI symbols and special characters
+          </Link>{" "}
+          library.
         </p>
         <div
           className="symbol-picker__grid mt-4"
@@ -698,6 +703,12 @@ export default function BgmiNameStylePageContent() {
               title: "Stylish Name Generator",
               description:
                 "Every Unicode font style in one place — all platforms.",
+            },
+            {
+              href: "/bgmi-symbols",
+              title: "BGMI Symbol Library",
+              description:
+                "500+ tested Unicode symbols and border pairs — copy paste for BGMI names.",
             },
             {
               href: "/free-fire-name-generator",
