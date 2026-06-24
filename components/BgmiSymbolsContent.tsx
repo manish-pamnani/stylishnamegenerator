@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import BgmiSymbolsExpertArticle from "@/components/BgmiSymbolsExpertArticle";
 import Breadcrumb from "@/components/Breadcrumb";
 import RelatedTools from "@/components/RelatedTools";
 import {
@@ -169,7 +170,7 @@ export default function BgmiSymbolsContent() {
           — free, no app needed.
         </p>
 
-        <div className="reveal reveal-delay-3 mb-10">
+        {/* <div className="reveal reveal-delay-3 mb-10">
           <label htmlFor="symbol-search" className="sr-only">
             Search BGMI symbols
           </label>
@@ -183,7 +184,7 @@ export default function BgmiSymbolsContent() {
             className="name-input symbol-search min-h-12 w-full rounded-xl px-4 text-base"
             autoComplete="off"
           />
-        </div>
+        </div> */}
       </section>
 
       <section
@@ -212,7 +213,7 @@ export default function BgmiSymbolsContent() {
         </ol>
       </section>
 
-      <section
+      {/* <section
         aria-labelledby="library-heading"
         className="tool-section reveal reveal-delay-4 mb-14"
       >
@@ -284,7 +285,7 @@ export default function BgmiSymbolsContent() {
           sizes="(max-width: 768px) 100vw, 640px"
           className="mt-10 w-full max-w-2xl rounded-xl border border-[var(--border)]"
         />
-      </section>
+      </section> */}
 
       <section
         aria-labelledby="borders-heading"
@@ -358,6 +359,8 @@ export default function BgmiSymbolsContent() {
           </table>
         </div>
       </section>
+
+      <BgmiSymbolsExpertArticle />
 
       <section
         aria-labelledby="faq-heading"
