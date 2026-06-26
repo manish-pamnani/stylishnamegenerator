@@ -8,7 +8,7 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 const OG_IMAGE = "/instagram-stylish-fonts-bio-generator.svg";
 
 const TITLE =
-  "Instagram Stylish Fonts & Bio Generator ✨ Copy Paste (2025)";
+  "Instagram Stylish Fonts & Bio Generator ✨ Copy Paste (2026)";
 const DESCRIPTION =
   "Generate stylish Instagram fonts and copy paste bio text instantly. Fancy Unicode fonts, emoji bios, and stylish captions — works directly in Instagram bio, posts and stories.";
 

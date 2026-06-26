@@ -8,7 +8,7 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 const OG_IMAGE = "/bgmi-symbols-special-characters-copy-paste.svg";
 
 const TITLE =
-  "BGMI Symbols & Special Characters 🎮 Copy Paste for Names (2025)";
+  "BGMI Symbols & Special Characters 🎮 Copy Paste for Names (2026)";
 const DESCRIPTION =
   "Copy paste 500+ BGMI symbols and special characters for stylish names. Unicode symbols that actually work in Battlegrounds Mobile India — borders, stars, flowers and more.";
 

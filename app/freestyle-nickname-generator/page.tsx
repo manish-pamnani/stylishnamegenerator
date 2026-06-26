@@ -18,7 +18,7 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 const OG_IMAGE = "/freestyle-nickname-generator-fancy-fonts.svg";
 
 const TITLE =
-  "Freestyle Nickname Generator ✨ Fancy & Stylish Nicknames (2025)";
+  "Freestyle Nickname Generator ✨ Fancy & Stylish Nicknames (2026)";
 const DESCRIPTION =
   "Generate creative freestyle nicknames in stylish Unicode fonts instantly. Copy paste fancy nicknames for gaming, Instagram, WhatsApp and more — 100+ styles free.";
 

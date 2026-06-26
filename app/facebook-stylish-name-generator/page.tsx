@@ -8,7 +8,7 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 const OG_IMAGE = "/facebook-stylish-name-generator-fb-fonts.svg";
 
 const TITLE =
-  "Facebook Stylish Name Generator 💙 FB Fancy Fonts Copy Paste (2025)";
+  "Facebook Stylish Name Generator 💙 FB Fancy Fonts Copy Paste (2026)";
 const DESCRIPTION =
   "Generate stylish Facebook names in fancy Unicode fonts instantly. Copy paste directly into your FB profile — works on Facebook and Messenger on any device.";
 

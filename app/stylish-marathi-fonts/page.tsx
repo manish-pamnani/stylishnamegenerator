@@ -8,7 +8,7 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 const OG_IMAGE = "/stylish-marathi-fonts-copy-paste-whatsapp.svg";
 
 const TITLE =
-  "Stylish Marathi Fonts Copy Paste 🌺 Unicode Marathi Text (2025)";
+  "Stylish Marathi Fonts Copy Paste 🌺 Unicode Marathi Text (2026)";
 const DESCRIPTION =
   "Copy paste stylish Marathi fonts instantly — 50+ Unicode Marathi text styles for WhatsApp, Instagram, Facebook and more. No app needed, works on any device.";
 

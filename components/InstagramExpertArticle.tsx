@@ -121,7 +121,7 @@ export function InstagramFontsBreakSection() {
         </li>
       </ol>
 
-      <ArticleTable caption="Font style compatibility — tested against Instagram field types (2025).">
+      <ArticleTable caption="Font style compatibility — tested against Instagram field types (2026).">
         <thead>
           <tr>
             <th>Font style</th>
