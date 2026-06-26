@@ -30,7 +30,15 @@ const doubleStruck = mapFromOffsets(0x1d552, 0x1d538, {
 });
 
 const boldCursive = mapFromOffsets(0x1d482, 0x1d468);
-const frakturGothic = mapFromOffsets(0x1d51e, 0x1d504);
+// Mathematical Fraktur has "holes" — C, H, I, R, Z live in the Letterlike
+// Symbols block, not the SMP block — so map them explicitly to avoid tofu boxes.
+const frakturGothic = mapFromOffsets(0x1d51e, 0x1d504, {
+  C: 0x212d,
+  H: 0x210c,
+  I: 0x2111,
+  R: 0x211c,
+  Z: 0x2128,
+});
 const boldFraktur = mapFromOffsets(0x1d586, 0x1d56c);
 const monospace = mapFromOffsets(0x1d68a, 0x1d670);
 const sansBold = mapFromOffsets(0x1d5ee, 0x1d5d4);
@@ -346,6 +354,33 @@ const MARATHI_LATIN_STYLE_IDS = [
 
 export function generateMarathiLatin(input: string): FontStyleResult[] {
   const name = input.trim() || "Marathi";
+
+  const styleMaps: Record<
+    (typeof MARATHI_LATIN_STYLE_IDS)[number],
+    { name: string; map: Record<string, string> }
+  > = {
+    "bold-cursive": { name: "Bold Cursive", map: boldCursive },
+    "double-struck": { name: "Double Struck", map: doubleStruck },
+    "sans-bold": { name: "Sans Bold", map: sansBold },
+    circled: { name: "Circled", map: circled },
+    "small-caps": { name: "Small Caps", map: smallCaps },
+    fullwidth: { name: "Fullwidth", map: fullwidth },
+    "fraktur-gothic": { name: "Fraktur Gothic", map: frakturGothic },
+  };
+
+  return MARATHI_LATIN_STYLE_IDS.map((id) => {
+    const { name: styleName, map } = styleMaps[id]!;
+    return {
+      id,
+      name: styleName,
+      text: applyMap(name, map),
+    };
+  });
+}
+
+/** Latin fancy fonts for Hindi users typing names in English — same set as Marathi Section B. */
+export function generateHindiLatin(input: string): FontStyleResult[] {
+  const name = input.trim() || "Hindi";
 
   const styleMaps: Record<
     (typeof MARATHI_LATIN_STYLE_IDS)[number],

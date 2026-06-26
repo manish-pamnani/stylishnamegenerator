@@ -775,6 +775,19 @@ body {
   border-radius: 0.25rem;
 }
 
+/*
+ * Inline highlight for symbol / emoji / Devanagari / math-letter examples.
+ * These glyphs render taller than a normal mono code chip and overflow the
+ * cramped .article-inline-code background — so this token uses no clipping
+ * background and renders the glyph cleanly inline at body size.
+ */
+.glyph-token {
+  color: var(--cream);
+  font-size: 1.02em;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
 .article-rules {
   margin: 1.25rem 0 0;
   padding-left: 1.25rem;
@@ -1908,4 +1921,30 @@ body {
 
 .image-slot__alt-preview {
   font-style: italic;
+}
+
+.premade-text {
+  color: var(--cream);
+  font-size: clamp(1.05rem, 3.2vw, 1.25rem);
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.wa-share-btn {
+  background: transparent;
+  color: #25d366;
+  border: 1px solid rgba(37, 211, 102, 0.45);
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.15s;
+}
+
+.wa-share-btn:hover {
+  background: #25d366;
+  color: var(--night);
+  border-color: #25d366;
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
 }

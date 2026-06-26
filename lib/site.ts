@@ -10,6 +10,7 @@ export const SITEMAP_PATHS = [
   "/instagram-stylish-fonts",
   "/facebook-stylish-name-generator",
   "/stylish-marathi-fonts",
+  "/hindi-stylish-fonts-generator",
   "/bgmi-symbols",
   "/about-us",
   "/contact-us",

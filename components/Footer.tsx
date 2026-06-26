@@ -31,6 +31,15 @@ export default function Footer() {
                 Marathi Fonts
               </a>
             </li>
+            <li>
+              <a
+                href="/hindi-stylish-fonts-generator"
+                suppressHydrationWarning
+                className="footer-link"
+              >
+                Hindi Fonts
+              </a>
+            </li>
           </ul>
         </nav>
         <nav aria-label="Legal and information">

@@ -11,6 +11,7 @@ const primaryNavLinks = [
 const moreNavLinks = [
   { href: "/instagram-stylish-fonts", label: "Instagram Fonts" },
   { href: "/facebook-stylish-name-generator", label: "FB Generator" },
+  { href: "/hindi-stylish-fonts-generator", label: "Hindi Fonts" },
 ] as const;
 
 const allNavLinks = [...primaryNavLinks, ...moreNavLinks] as const;
