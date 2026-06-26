@@ -8,7 +8,7 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 const OG_IMAGE = "/hindi-stylish-fonts-generator-whatsapp-status.svg";
 
 const TITLE =
-  "Hindi Stylish Fonts Generator 🌟 हिंदी स्टाइलिश फॉन्ट Copy Paste (2025)";
+  "Hindi Stylish Fonts Generator 🌟 हिंदी स्टाइलिश फॉन्ट Copy Paste (2026)";
 const DESCRIPTION =
   "Generate stylish Hindi fonts and copy paste instantly — fancy Unicode fonts for Hindi names, WhatsApp status, Instagram bio and Facebook. Works on any device.";
 
