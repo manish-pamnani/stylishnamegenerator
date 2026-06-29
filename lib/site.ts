@@ -12,6 +12,7 @@ export const SITEMAP_PATHS = [
   "/stylish-marathi-fonts",
   "/hindi-stylish-fonts-generator",
   "/arabic-font-generator",
+  "/wavy-text-generator",
   "/bgmi-symbols",
   "/about-us",
   "/contact-us",

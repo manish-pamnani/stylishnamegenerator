@@ -1948,3 +1948,73 @@ body {
   border-color: #25d366;
   box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
 }
+
+/* Wavy text generator — featured output, style switcher, and use-case tiles. */
+.wavy-output {
+  border: 1px solid rgba(0, 232, 255, 0.28);
+  background:
+    linear-gradient(135deg, var(--neon-cyan-dim) 0%, transparent 55%),
+    var(--night-surface);
+}
+
+.wave-style-card--active {
+  border-color: var(--neon-lime);
+  box-shadow:
+    0 0 28px var(--neon-lime-dim),
+    0 0 0 1px rgba(200, 255, 0, 0.18) inset;
+}
+
+.wave-style-card__preview {
+  border: 1px solid var(--border);
+  background: var(--night-elevated);
+  transition:
+    border-color 0.2s,
+    background 0.2s,
+    transform 0.12s;
+}
+
+.wave-style-card__preview:hover {
+  border-color: var(--neon-cyan);
+  background: var(--neon-cyan-dim);
+}
+
+.wave-style-card__preview:active {
+  transform: scale(0.99);
+}
+
+.wave-style-card__blurb {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--cream-faint);
+  margin: 0;
+}
+
+.wave-style-card__active-tag {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--neon-lime);
+}
+
+.wave-use-tile {
+  border: 1px solid var(--border);
+  background: var(--night-surface);
+  transition:
+    border-color 0.25s,
+    box-shadow 0.25s,
+    transform 0.2s;
+}
+
+.wave-use-tile:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 0 32px var(--neon-pink-dim);
+  transform: translateY(-2px);
+}
+
+.wave-use-tile__text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--cream-muted);
+}

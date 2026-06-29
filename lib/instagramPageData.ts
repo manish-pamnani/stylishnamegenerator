@@ -268,6 +268,11 @@ export const IG_RELATED_TOOLS = [
     description: "Mix symbols and fonts for gaming, social, and chat apps.",
   },
   {
+    href: "/wavy-text-generator",
+    title: "Wavy Text Generator",
+    description: "Turn your bio into wavy Unicode text — copy paste wave fonts.",
+  },
+  {
     href: "/hindi-stylish-fonts-generator",
     title: "Hindi Stylish Fonts",
     description: "Fancy Devanagari fonts for bios, captions, and status.",

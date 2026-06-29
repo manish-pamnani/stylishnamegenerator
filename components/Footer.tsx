@@ -49,6 +49,15 @@ export default function Footer() {
                 Arabic/Urdu Fonts
               </a>
             </li>
+            <li>
+              <a
+                href="/wavy-text-generator"
+                suppressHydrationWarning
+                className="footer-link"
+              >
+                Wavy Text
+              </a>
+            </li>
           </ul>
         </nav>
         <nav aria-label="Legal and information">
