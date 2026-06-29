@@ -6,6 +6,13 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Breadcrumb from "@/components/Breadcrumb";
 import RelatedTools from "@/components/RelatedTools";
 import {
+  WaveDeveloperSection,
+  WaveFieldTestSection,
+  WaveMythsSection,
+  WaveNormalizationSection,
+  WaveRenderingSection,
+} from "@/components/WavyExpertArticle";
+import {
   applyWaveStyle,
   DEFAULT_WAVE_STYLE_ID,
   WAVE_FAQ_ITEMS,
@@ -287,6 +294,14 @@ export default function WavyTextContent() {
           ))}
         </div>
       </section>
+
+      <article className="article-content reveal reveal-delay-4 mb-14">
+        <WaveRenderingSection />
+        <WaveNormalizationSection />
+        <WaveMythsSection />
+        <WaveFieldTestSection />
+        <WaveDeveloperSection />
+      </article>
 
       <section
         aria-labelledby="faq-heading"

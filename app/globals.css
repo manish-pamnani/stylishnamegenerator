@@ -2018,3 +2018,32 @@ body {
   line-height: 1.6;
   color: var(--cream-muted);
 }
+
+.wave-status {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+}
+
+.wave-status--pass {
+  color: var(--neon-cyan);
+  border-color: rgba(0, 232, 255, 0.35);
+  background: var(--neon-cyan-dim);
+}
+
+.wave-status--partial {
+  color: #e8c547;
+  border-color: rgba(232, 197, 71, 0.4);
+  background: rgba(232, 197, 71, 0.08);
+}
+
+.wave-status--fail {
+  color: #ff6b6b;
+  border-color: rgba(255, 107, 107, 0.4);
+  background: rgba(255, 107, 107, 0.08);
+}

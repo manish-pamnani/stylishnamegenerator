@@ -227,6 +227,208 @@ export const WAVE_FAQ_ITEMS: readonly WaveFaqItem[] = [
   },
 ] as const;
 
+/* ------------------------------------------------------------------ *
+ * Expert-article data — platform rendering, normalization, myths,
+ * field-test log, and developer reference. Kept here so the JSON-LD and
+ * the rendered article share one source of truth.
+ * ------------------------------------------------------------------ */
+
+export type WavePlatformRow = {
+  platform: string;
+  renders: string;
+  issues: string;
+  safeStyles: string;
+};
+
+export const WAVE_PLATFORM_RENDERING: readonly WavePlatformRow[] = [
+  {
+    platform: "Android (Noto Sans / OEM)",
+    renders: "Yes — varies by skin",
+    issues:
+      "OEM fonts stack diacritics at different heights; Samsung One UI is especially inconsistent and marks can overlap.",
+    safeStyles: "Classic, Bubble",
+  },
+  {
+    platform: "iOS (San Francisco)",
+    renders: "Yes — clean",
+    issues:
+      "Tighter, more even stacking than Android, but apps layered on top may normalize (see WhatsApp).",
+    safeStyles: "Classic, Ring",
+  },
+  {
+    platform: "WhatsApp",
+    renders: "Mostly",
+    issues:
+      "iOS performs NFC normalization before display; Double Wave (U+0360) can strip to a single mark on the receiver's end.",
+    safeStyles: "Classic, Bubble, Ring",
+  },
+  {
+    platform: "Instagram",
+    renders: "Yes",
+    issues:
+      "Bio and caption use different renderers — styles that look clean in bio can clip vertically in captions.",
+    safeStyles: "Classic, Bubble",
+  },
+  {
+    platform: "BGMI (engine font)",
+    renders: "Partial",
+    issues:
+      "Names render through the game engine font, not the system font; heavy marks show as boxes/plain and hit the byte limit.",
+    safeStyles: "Classic only",
+  },
+  {
+    platform: "Discord",
+    renders: "Yes — reliable",
+    issues:
+      "No normalization on paste, so even heavy combining stacks survive intact.",
+    safeStyles: "All, incl. Chaos",
+  },
+  {
+    platform: "Clipboard (some Gboard builds)",
+    renders: "n/a",
+    issues:
+      "Certain keyboard/clipboard builds silently strip combining marks on paste — looks like a generator bug but is the clipboard layer.",
+    safeStyles: "Re-copy & test",
+  },
+];
+
+export type WaveNormalizationTier = {
+  useCase: string;
+  risk: string;
+  tier: string;
+};
+
+export const WAVE_NORMALIZATION_TIERS: readonly WaveNormalizationTier[] = [
+  {
+    useCase: "Discord username / nickname",
+    risk: "None — Discord does not normalize",
+    tier: "Any style, including Chaos Wave",
+  },
+  {
+    useCase: "WhatsApp / Instagram bio",
+    risk: "Low — display-time NFC on some clients",
+    tier: "NFC-stable styles: Ring, Bubble, Deep",
+  },
+  {
+    useCase: "Notion / Slack / Google Docs",
+    risk: "Medium — NFC normalize on paste",
+    tier: "Single-mark, no-precomposed styles: Ring",
+  },
+  {
+    useCase: "Game / website registration form (DB-backed)",
+    risk: "High — NFKC may strip to base letters",
+    tier: "Expect plain text; keep a styled display copy elsewhere",
+  },
+];
+
+export type WaveMyth = {
+  myth: string;
+  reality: string;
+  verdict: "Fully False" | "Partially True" | "Context-Dependent";
+};
+
+export const WAVE_MYTHS: readonly WaveMyth[] = [
+  {
+    myth: "Wavy text works everywhere Unicode works.",
+    reality:
+      "Unicode support and combining-character support are different things. A platform can be fully Unicode-compliant yet render diacritic stacks wrong because its line-height, font metrics, or text-shaping engine was never built for deep stacks. LinkedIn is Unicode-compliant but aggressively normalizes bio fields, stripping most combining styles to plain text within seconds of saving.",
+    verdict: "Fully False",
+  },
+  {
+    myth: "More combining marks = a more dramatic wave.",
+    reality:
+      "Past roughly 3–4 marks per character, most engines stop stacking and start overlapping marks into visual noise rather than a wave. Chaos Wave works despite this — its randomization creates perceived depth, not genuinely 'more wave.'",
+    verdict: "Partially True",
+  },
+  {
+    myth: "Zalgo is just extreme wavy text.",
+    reality:
+      "Same mechanism, opposite intent. Wavy text is designed to stay legible — aesthetic layering. True Zalgo is designed to be illegible — intentional text destruction used as internet horror art. Chaos Wave is a cousin of Zalgo, not the same thing.",
+    verdict: "Partially True",
+  },
+  {
+    myth: "If it looks right in my preview, it's fine.",
+    reality:
+      "The preview renders in your browser using your OS font. The destination has its own font, shaping engine, and possibly normalization. The preview is always optimistic — test in the actual field before committing.",
+    verdict: "Fully False",
+  },
+  {
+    myth: "Wavy text is a recent trend.",
+    reality:
+      "Combining-character abuse for aesthetics dates back to at least 2004–2005 forum culture. The Zalgo meme that popularized mark-stacking was documented on Something Awful and 4chan before 2010. The audience changed, not the technique.",
+    verdict: "Fully False",
+  },
+];
+
+export type WaveFieldStatus = "pass" | "partial" | "fail";
+
+export type WaveFieldTestRow = {
+  style: string;
+  instagram: WaveFieldStatus;
+  whatsapp: WaveFieldStatus;
+  bgmi: WaveFieldStatus;
+  discord: WaveFieldStatus;
+  twitter: WaveFieldStatus;
+  verdict: string;
+};
+
+export const WAVE_FIELD_TEST: readonly WaveFieldTestRow[] = [
+  {
+    style: "Classic Wave",
+    instagram: "pass",
+    whatsapp: "pass",
+    bgmi: "pass",
+    discord: "pass",
+    twitter: "pass",
+    verdict: "Safe everywhere",
+  },
+  {
+    style: "Bubble Wave",
+    instagram: "pass",
+    whatsapp: "pass",
+    bgmi: "pass",
+    discord: "pass",
+    twitter: "pass",
+    verdict: "Safe everywhere",
+  },
+  {
+    style: "Deep Wave",
+    instagram: "pass",
+    whatsapp: "pass",
+    bgmi: "partial",
+    discord: "pass",
+    twitter: "pass",
+    verdict: "Reliable; light BGMI risk",
+  },
+  {
+    style: "Ring Wave",
+    instagram: "pass",
+    whatsapp: "pass",
+    bgmi: "partial",
+    discord: "pass",
+    twitter: "pass",
+    verdict: "Most NFC-stable / durable",
+  },
+  {
+    style: "Double Wave",
+    instagram: "partial",
+    whatsapp: "partial",
+    bgmi: "fail",
+    discord: "pass",
+    twitter: "partial",
+    verdict: "Fragile — collapses under NFC",
+  },
+  {
+    style: "Chaos Wave",
+    instagram: "partial",
+    whatsapp: "partial",
+    bgmi: "fail",
+    discord: "pass",
+    twitter: "partial",
+    verdict: "Discord / flex use only",
+  },
+];
+
 export const WAVE_RELATED_TOOLS = [
   {
     href: "/",
