@@ -1382,10 +1382,34 @@ body {
   margin-bottom: 1rem;
 }
 
+.themed-name-category {
+  margin-bottom: 2rem;
+}
+
+.themed-name-category:last-child {
+  margin-bottom: 0;
+}
+
 @media (max-width: 767px) {
   .vibe-bucket--hidden-mobile {
     display: none;
   }
+
+  .themed-name-category--hidden-mobile {
+    display: none;
+  }
+}
+
+.expert-note--pink {
+  border-color: rgba(255, 45, 149, 0.35);
+  border-left-color: var(--neon-pink);
+  background:
+    linear-gradient(135deg, var(--neon-pink-dim) 0%, transparent 55%),
+    rgba(20, 18, 16, 0.85);
+}
+
+.expert-note--pink .expert-note__label {
+  color: var(--neon-pink);
 }
 
 .curated-name-grid__cta {
