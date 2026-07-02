@@ -7,7 +7,7 @@ const PAGE_PATH = "/wavy-text-generator";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 const OG_IMAGE = "/wavy-text-generator-copy-paste-wave-fonts.svg";
 
-const TITLE = "Wavy Text Generator 〰️ Copy Paste Wave Fonts Online (2025)";
+const TITLE = "Wavy Text Generator 〰️ Copy Paste Wave Fonts Online (2026)";
 const DESCRIPTION =
   "Generate wavy text instantly using Unicode combining characters. Copy paste wave style fonts for Instagram bio, WhatsApp status, BGMI names and more — free online tool.";
 

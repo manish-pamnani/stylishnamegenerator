@@ -349,7 +349,7 @@ export const S_CONFIG: LetterConfig = {
   slug: "/s-stylish-name",
   placeholder: "Sara",
   title:
-    "S Stylish Name Generator ✨ S Style Names Copy Paste (2025)",
+    "S Stylish Name Generator ✨ S Style Names Copy Paste (2026)",
   description:
     "Generate stylish names starting with S in fancy Unicode fonts. Copy paste S style names for Instagram, BGMI, WhatsApp and more — 50+ name ideas included.",
   h1: "S Stylish Name — Fancy Fonts & Name Ideas",
@@ -409,7 +409,7 @@ export const M_CONFIG: LetterConfig = {
   slug: "/m-stylish-name",
   placeholder: "Mohit",
   title:
-    "M Stylish Name Generator ✨ M Style Names Copy Paste (2025)",
+    "M Stylish Name Generator ✨ M Style Names Copy Paste (2026)",
   description:
     "Generate stylish names starting with M in fancy Unicode fonts. Copy paste M style names for Instagram, BGMI, WhatsApp and more — 50+ name ideas included.",
   h1: "Myself Stylish Name — M Style Fancy Fonts & Ideas",
@@ -469,7 +469,7 @@ export const J_CONFIG: LetterConfig = {
   slug: "/j-stylish-name",
   placeholder: "Jay",
   title:
-    "J Stylish Name Generator ✨ J Style Names Copy Paste (2025)",
+    "J Stylish Name Generator ✨ J Style Names Copy Paste (2026)",
   description:
     "Generate stylish names starting with J in fancy Unicode fonts. Copy paste J style names for Instagram, BGMI, WhatsApp and more — 50+ name ideas included.",
   h1: "J Stylish Name — Fancy Fonts & Name Ideas",

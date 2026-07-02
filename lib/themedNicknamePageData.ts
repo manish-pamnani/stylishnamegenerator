@@ -217,9 +217,9 @@ export const NOBITA_CONFIG: ThemedNicknameConfig = {
   slug: "/nobita-nickname-style",
   breadcrumbLabel: "Nobita Nickname Style",
   title:
-    "Nobita Nickname Style 😂 Funny BGMI & Free Fire Names Copy Paste (2025)",
+    "Nobita Nickname Style 😂 Funny BGMI & Free Fire Names Copy Paste (2026)",
   description:
-    "Copy paste 50+ Nobita-style nicknames for BGMI and Free Fire — funny, cute and stylish Unicode names inspired by Nobita. Updated for 2025.",
+    "Copy paste 50+ Nobita-style nicknames for BGMI and Free Fire — funny, cute and stylish Unicode names inspired by Nobita. Updated for 2026.",
   h1: "Nobita Nickname Style — Funny & Stylish BGMI Names",
   ogImage: "/nobita-nickname-style-bgmi-names.svg",
   ogImageAlt:
@@ -297,9 +297,9 @@ export const PSYCHO_CONFIG: ThemedNicknameConfig = {
   id: "psycho",
   slug: "/psycho-stylish-name",
   breadcrumbLabel: "Psycho Stylish Name",
-  title: "Psycho Stylish Name 😈 Attitude BGMI Names Copy Paste (2025)",
+  title: "Psycho Stylish Name 😈 Attitude BGMI Names Copy Paste (2026)",
   description:
-    "Copy paste 50+ psycho stylish names for BGMI and Free Fire — attitude, aggressive and stylish Unicode names. Updated for 2025.",
+    "Copy paste 50+ psycho stylish names for BGMI and Free Fire — attitude, aggressive and stylish Unicode names. Updated for 2026.",
   h1: "Psycho Stylish Name — Attitude BGMI & Free Fire Names",
   ogImage: "/psycho-stylish-name-bgmi-attitude.svg",
   ogImageAlt:

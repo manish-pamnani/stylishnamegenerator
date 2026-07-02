@@ -227,7 +227,7 @@ export function WaveFieldTestSection() {
     <section aria-labelledby="field-test-heading">
       <h2 id="field-test-heading" className="article-heading">
         Tested and Logged: Which Wavy Styles Actually Survive in Real App Fields
-        (2025)
+        (2026)
       </h2>
       <p>
         &quot;It works&quot; is meaningless without a definition. For this log, a
