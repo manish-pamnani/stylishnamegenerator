@@ -445,4 +445,9 @@ export const WAVE_RELATED_TOOLS = [
     title: "Instagram Stylish Fonts",
     description: "Fancy Unicode bios, captions, and emoji for Instagram.",
   },
+  {
+    href: "/biology-font-style",
+    title: "Biology Font Style",
+    description: "Science fonts for projects, Instagram bios, and WhatsApp.",
+  },
 ] as const;

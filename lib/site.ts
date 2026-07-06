@@ -19,6 +19,8 @@ export const SITEMAP_PATHS = [
   "/bgmi-symbols",
   "/nobita-nickname-style",
   "/psycho-stylish-name",
+  "/biology-font-style",
+  "/tiktok-font-generator",
   "/about-us",
   "/contact-us",
   "/privacy-policy",

@@ -38,7 +38,7 @@ export type ThemedNicknameConfig = {
   itemListDescription: string;
 };
 
-export const THEMED_NICKNAME_LAST_UPDATED = "July 2025";
+export const THEMED_NICKNAME_LAST_UPDATED = "July 2026";
 
 const NOBITA_CATEGORIES: ThemedNameCategory[] = [
   {

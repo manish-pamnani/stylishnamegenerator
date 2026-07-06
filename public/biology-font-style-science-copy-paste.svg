@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f4f7f5"/>
+      <stop offset="100%" stop-color="#e4ede8"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1f8a5f"/>
+      <stop offset="50%" stop-color="#2f7dd1"/>
+      <stop offset="100%" stop-color="#1f8a5f"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#bg)"/>
+  <rect x="24" y="24" width="592" height="352" rx="20" fill="#ffffff" stroke="#d8e3dd" stroke-width="2"/>
+
+  <!-- DNA helix -->
+  <g stroke="#2f7dd1" stroke-width="3" fill="none" opacity="0.85">
+    <path d="M 90 60 C 130 100, 60 140, 90 180 C 130 220, 60 260, 90 300 C 130 340, 60 360, 90 380"/>
+    <path d="M 150 60 C 110 100, 180 140, 150 180 C 110 220, 180 260, 150 300 C 110 340, 180 360, 150 380"/>
+  </g>
+  <g stroke="#1f8a5f" stroke-width="2" opacity="0.6">
+    <line x1="92" y1="80" x2="148" y2="80"/>
+    <line x1="80" y1="120" x2="160" y2="120"/>
+    <line x1="92" y1="160" x2="148" y2="160"/>
+    <line x1="80" y1="200" x2="160" y2="200"/>
+    <line x1="92" y1="240" x2="148" y2="240"/>
+    <line x1="80" y1="280" x2="160" y2="280"/>
+    <line x1="92" y1="320" x2="148" y2="320"/>
+  </g>
+
+  <text x="330" y="150" text-anchor="middle" fill="#1a2e26" font-family="Georgia, serif" font-size="42" font-weight="700">Biology</text>
+  <text x="330" y="185" text-anchor="middle" fill="#4a6b5c" font-family="monospace" font-size="14" letter-spacing="1">Double Struck · Fraktur · Monospace</text>
+
+  <rect x="240" y="215" width="180" height="40" rx="10" fill="#eaf3ee" stroke="#1f8a5f" stroke-width="1.5"/>
+  <text x="330" y="240" text-anchor="middle" fill="#1f8a5f" font-family="monospace" font-size="13" letter-spacing="1">COPY PASTE READY</text>
+
+  <rect x="240" y="270" width="84" height="40" rx="10" fill="#eef3fb" stroke="#2f7dd1" stroke-width="1"/>
+  <text x="282" y="295" text-anchor="middle" fill="#2f7dd1" font-size="18">🧬</text>
+  <rect x="336" y="270" width="84" height="40" rx="10" fill="#eef3fb" stroke="#2f7dd1" stroke-width="1"/>
+  <text x="378" y="295" text-anchor="middle" fill="#2f7dd1" font-size="18">Σ α β</text>
+
+  <rect x="0" y="376" width="640" height="4" fill="url(#accent)" opacity="0.8"/>
+  <text x="330" y="368" text-anchor="middle" fill="#5c7669" font-family="monospace" font-size="10" letter-spacing="3">BIOLOGY FONT STYLE</text>
+</svg>

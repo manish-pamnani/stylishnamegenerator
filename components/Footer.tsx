@@ -85,6 +85,24 @@ export default function Footer() {
                 J Names
               </a>
             </li>
+            <li>
+              <a
+                href="/biology-font-style"
+                suppressHydrationWarning
+                className="footer-link"
+              >
+                Biology Fonts
+              </a>
+            </li>
+            <li>
+              <a
+                href="/tiktok-font-generator"
+                suppressHydrationWarning
+                className="footer-link"
+              >
+                TikTok Fonts
+              </a>
+            </li>
           </ul>
         </nav>
         <nav aria-label="Legal and information">

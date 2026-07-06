@@ -481,6 +481,69 @@ export function generateFacebookAll(input: string): FacebookStyleResult[] {
     });
 }
 
+/** Style ids that carry a "Great for biology" badge — science/academic look. */
+export const BIOLOGY_BADGE_STYLE_IDS = [
+  "double-struck",
+  "fraktur-gothic",
+  "bold-fraktur",
+  "monospace",
+  "sans-bold",
+  "sans-italic",
+  "small-caps",
+  "bold-cursive",
+] as const;
+
+export function generateBiologyAll(input: string): FontStyleResult[] {
+  const name = input.trim() === "" ? "Biology" : input;
+  return generateAll(name);
+}
+
+export type TikTokCompatLevel = "full" | "bioOnly";
+
+export type TikTokStyleResult = FontStyleResult & {
+  tiktokCompat: TikTokCompatLevel;
+};
+
+/**
+ * Unicode styles for TikTok — 11 styles, excluding strikethrough and upside
+ * down since both fail in TikTok bio and username fields.
+ */
+const TIKTOK_STYLE_IDS = [
+  "bold-cursive",
+  "sans-bold",
+  "sans-italic",
+  "small-caps",
+  "fullwidth",
+  "double-struck",
+  "fraktur-gothic",
+  "bold-fraktur",
+  "monospace",
+  "circled",
+  "squared",
+] as const;
+
+/** Styles that render in both TikTok bio and username fields. */
+const TIKTOK_COMPAT_FULL = new Set<string>(["sans-bold", "small-caps"]);
+
+export const TIKTOK_BIO_LIMIT = 80;
+export const TIKTOK_USERNAME_LIMIT = 24;
+
+export function generateTiktokAll(input: string): TikTokStyleResult[] {
+  const name = input.trim() === "" ? "YourName" : input;
+
+  const allStyles = generateAll(name);
+  const tiktokSet = new Set<string>(TIKTOK_STYLE_IDS);
+
+  return allStyles
+    .filter((style) => tiktokSet.has(style.id))
+    .map((style) => {
+      const tiktokCompat: TikTokCompatLevel = TIKTOK_COMPAT_FULL.has(style.id)
+        ? "full"
+        : "bioOnly";
+      return { ...style, tiktokCompat };
+    });
+}
+
 export function generateInstagramAll(input: string): FontStyleResult[] {
   const text = input.trim() === "" ? "YourName" : input;
 

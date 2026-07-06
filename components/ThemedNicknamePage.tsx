@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import Breadcrumb from "@/components/Breadcrumb";
 import RelatedTools from "@/components/RelatedTools";
@@ -126,6 +126,67 @@ function NamesIntro({ config }: { config: ThemedNicknameConfig }) {
   );
 }
 
+function linkifyText(
+  text: string,
+  links: { needle: string; href: string }[],
+) {
+  const matches = links
+    .map((link) => ({ ...link, index: text.indexOf(link.needle) }))
+    .filter((link) => link.index !== -1)
+    .sort((a, b) => a.index - b.index);
+
+  const nodes: ReactNode[] = [];
+  let cursor = 0;
+  matches.forEach((match, i) => {
+    if (match.index < cursor) return;
+    nodes.push(text.slice(cursor, match.index));
+    nodes.push(
+      <a
+        key={i}
+        href={match.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="article-link"
+      >
+        {match.needle}
+      </a>,
+    );
+    cursor = match.index + match.needle.length;
+  });
+  nodes.push(text.slice(cursor));
+
+  return nodes;
+}
+
+function CulturalContext({ config }: { config: ThemedNicknameConfig }) {
+  if (config.id === "nobita") {
+    return (
+      <p>
+        {linkifyText(config.culturalContext, [
+          { needle: "Doraemon", href: "https://en.wikipedia.org/wiki/Doraemon" },
+          {
+            needle: "BGMI",
+            href: "https://www.battlegroundsmobileindia.com/",
+          },
+        ])}
+      </p>
+    );
+  }
+
+  return (
+    <p>
+      {linkifyText(config.culturalContext, [
+        { needle: "BGMI", href: "https://www.battlegroundsmobileindia.com/" },
+        { needle: "Gothic script", href: "https://en.wikipedia.org/wiki/Blackletter" },
+        {
+          needle: "Free Fire",
+          href: "https://en.wikipedia.org/wiki/Free_Fire_(video_game)",
+        },
+      ])}
+    </p>
+  );
+}
+
 function CtaBox({ config }: { config: ThemedNicknameConfig }) {
   if (config.id === "nobita") {
     return (
@@ -183,7 +244,12 @@ function renderFaqAnswer(item: ThemedFaqItem, config: ThemedNicknameConfig) {
 
       return (
         <>
-          {beforeGen}
+          {linkifyText(beforeGen, [
+            {
+              needle: "Bold Fraktur",
+              href: "https://en.wikipedia.org/wiki/Mathematical_Alphanumeric_Symbols",
+            },
+          ])}
           <Link href="/bgmi-name-generator" className="article-link">
             BGMI name generator
           </Link>
@@ -194,6 +260,15 @@ function renderFaqAnswer(item: ThemedFaqItem, config: ThemedNicknameConfig) {
           {end}
         </>
       );
+    }
+
+    if (item.question === "Are psycho names allowed in BGMI?") {
+      return linkifyText(item.answer, [
+        {
+          needle: "Krafton's content policy",
+          href: "https://www.battlegroundsmobileindia.com/rules",
+        },
+      ]);
     }
 
     if (item.question === "How do I create my own psycho stylish name?") {
@@ -224,8 +299,6 @@ export default function ThemedNicknamePage({
 }: {
   config: ThemedNicknameConfig;
 }) {
-  const [activeTab, setActiveTab] = useState(config.categories[0]?.id ?? "");
-
   return (
     <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-10 sm:px-6 sm:py-14">
       <div className="reveal mb-6">
@@ -248,7 +321,7 @@ export default function ThemedNicknamePage({
         <h2 id="context-heading" className="article-heading">
           {config.culturalHeading}
         </h2>
-        <p>{config.culturalContext}</p>
+        <CulturalContext config={config} />
       </section>
 
       <section
@@ -266,28 +339,8 @@ export default function ThemedNicknamePage({
           names
         </p>
 
-        <div
-          className="vibe-tabs md:hidden"
-          role="tablist"
-          aria-label="Name categories"
-        >
-          {config.categories.map((category) => (
-            <button
-              key={category.id}
-              type="button"
-              role="tab"
-              aria-selected={activeTab === category.id}
-              className={`vibe-tabs__btn ${activeTab === category.id ? "vibe-tabs__btn--active" : ""}`}
-              onClick={() => setActiveTab(category.id)}
-            >
-              {category.tabLabel}
-            </button>
-          ))}
-        </div>
-
         <div className="vibe-buckets mt-4">
           {config.categories.map((category) => {
-            const hiddenOnMobile = activeTab !== category.id;
             let cardIndex = 0;
             for (const prev of config.categories) {
               if (prev.id === category.id) break;
@@ -295,10 +348,7 @@ export default function ThemedNicknamePage({
             }
 
             return (
-              <div
-                key={category.id}
-                className={`themed-name-category ${hiddenOnMobile ? "themed-name-category--hidden-mobile" : ""}`}
-              >
+              <div key={category.id} className="themed-name-category">
                 <h3 className="vibe-bucket__heading">{category.title}</h3>
                 <div className="results-grid grid grid-cols-1 gap-3 min-[600px]:grid-cols-2">
                   {category.names.map((name, index) => (
@@ -324,15 +374,6 @@ export default function ThemedNicknamePage({
         </h2>
         <CtaBox config={config} />
       </section>
-
-      <Image
-        src={config.ogImage}
-        alt={config.ogImageAlt}
-        width={640}
-        height={400}
-        sizes="(max-width: 768px) 100vw, 640px"
-        className="reveal reveal-delay-4 mb-14 w-full max-w-2xl rounded-xl border border-[var(--border)]"
-      />
 
       <ThemedNicknameExpertSections config={config} />
 

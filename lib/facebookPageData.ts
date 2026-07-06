@@ -141,6 +141,11 @@ export const FB_RELATED_TOOLS = [
     description: "Fancy Unicode fonts and bio templates for Instagram.",
   },
   {
+    href: "/tiktok-font-generator",
+    title: "TikTok Font Generator",
+    description: "Stylish fonts and bio templates for TikTok, Reels, and Shorts.",
+  },
+  {
     href: "/freestyle-nickname-generator",
     title: "Freestyle Nickname Generator",
     description: "Mix symbols and fonts for gaming, social, and chat apps.",

@@ -538,6 +538,11 @@ body {
   transform: translateY(-3px);
 }
 
+.style-card--recommended {
+  border-color: var(--neon-lime);
+  box-shadow: 0 0 24px var(--glow-lime);
+}
+
 .style-label {
   font-family: var(--font-mono);
   font-size: 0.6rem;
@@ -907,6 +912,34 @@ body {
   overflow: visible;
 }
 
+.char-count-badge {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.04em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.char-count-badge--ok {
+  color: var(--neon-lime);
+  border-color: var(--neon-lime-dim);
+  background: var(--neon-lime-dim);
+}
+
+.char-count-badge--warn {
+  color: #ffb020;
+  border-color: rgba(255, 176, 32, 0.35);
+  background: rgba(255, 176, 32, 0.12);
+}
+
+.char-count-badge--danger {
+  color: var(--neon-pink);
+  border-color: rgba(255, 45, 149, 0.35);
+  background: var(--neon-pink-dim);
+}
+
 .fb-compat-badge {
   position: absolute;
   top: 0.75rem;
@@ -1118,6 +1151,10 @@ body {
   border-color: var(--neon-lime);
   background: rgba(200, 255, 0, 0.12);
   box-shadow: 0 0 16px rgba(200, 255, 0, 0.2);
+}
+
+.symbol-library__glyph--lg {
+  font-size: 2rem;
 }
 
 .copy-all-btn {

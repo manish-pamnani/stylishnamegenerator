@@ -263,6 +263,11 @@ export const IG_RELATED_TOOLS = [
     description: "Fancy Unicode fonts tested for Facebook profile names.",
   },
   {
+    href: "/tiktok-font-generator",
+    title: "TikTok Font Generator",
+    description: "Stylish fonts and bio templates for TikTok, Reels, and Shorts.",
+  },
+  {
     href: "/freestyle-nickname-generator",
     title: "Freestyle Nickname Generator",
     description: "Mix symbols and fonts for gaming, social, and chat apps.",
@@ -281,6 +286,11 @@ export const IG_RELATED_TOOLS = [
     href: "/stylish-marathi-fonts",
     title: "Marathi Unicode Fonts",
     description: "Decorated Marathi text and fancy Latin styles for WhatsApp.",
+  },
+  {
+    href: "/biology-font-style",
+    title: "Biology Font Style",
+    description: "Science-styled Unicode fonts for projects, bios, and notes.",
   },
 ] as const;
 
