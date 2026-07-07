@@ -13,14 +13,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
         : path === "/about-us" ||
             path === "/contact-us" ||
             path === "/privacy-policy" ||
-            path === "/disclaimer"
+            path === "/disclaimer" ||
+            path === "/what-is-stylish-name-generator"
           ? 0.4
           : 0.8,
     changeFrequency:
       path === "/about-us" ||
       path === "/contact-us" ||
       path === "/privacy-policy" ||
-      path === "/disclaimer"
+      path === "/disclaimer" ||
+      path === "/what-is-stylish-name-generator"
         ? "monthly"
         : "weekly",
   }));

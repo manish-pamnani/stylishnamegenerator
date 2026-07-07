@@ -109,6 +109,15 @@ export default function Footer() {
           <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             <li>
               <a
+                href="/what-is-stylish-name-generator"
+                suppressHydrationWarning
+                className="footer-link"
+              >
+                What is This?
+              </a>
+            </li>
+            <li>
+              <a
                 href="/about-us"
                 suppressHydrationWarning
                 className="footer-link"

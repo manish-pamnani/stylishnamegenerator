@@ -21,6 +21,7 @@ export const SITEMAP_PATHS = [
   "/psycho-stylish-name",
   "/biology-font-style",
   "/tiktok-font-generator",
+  "/what-is-stylish-name-generator",
   "/about-us",
   "/contact-us",
   "/privacy-policy",

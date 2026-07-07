@@ -1777,6 +1777,73 @@ body {
   white-space: nowrap;
 }
 
+.reading-article {
+  max-width: 42.5rem;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.cta-box {
+  margin: 1.5rem 0 0;
+  padding: 1.75rem 1.75rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border-hover);
+  background:
+    linear-gradient(135deg, var(--neon-pink-dim) 0%, transparent 60%),
+    rgba(20, 18, 16, 0.85);
+}
+
+.cta-box__title {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  color: var(--cream);
+  margin-bottom: 0.6rem;
+}
+
+.cta-box__text {
+  color: var(--cream-muted);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.cta-box__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.cta-box__action {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.65rem 1.1rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 45, 149, 0.45);
+  color: var(--neon-pink);
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+.cta-box__action:hover {
+  background: var(--neon-pink);
+  color: var(--night);
+  border-color: var(--neon-pink);
+  box-shadow: 0 0 20px var(--glow-pink);
+  transform: translateY(-1px);
+}
+
+.cta-box__action--secondary {
+  color: var(--neon-cyan);
+  border-color: rgba(0, 232, 255, 0.4);
+}
+
+.cta-box__action--secondary:hover {
+  background: var(--neon-cyan);
+  color: var(--night);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 20px var(--neon-cyan-dim);
+}
+
 .verdict-badge--busted {
   color: var(--neon-pink);
   border-color: rgba(255, 45, 149, 0.35);
