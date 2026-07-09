@@ -15,6 +15,15 @@ export default function Footer() {
             </li>
             <li>
               <a
+                href="/bgmi-stylish-names-list"
+                suppressHydrationWarning
+                className="footer-link"
+              >
+                BGMI Names List
+              </a>
+            </li>
+            <li>
+              <a
                 href="/facebook-stylish-name-generator"
                 suppressHydrationWarning
                 className="footer-link"

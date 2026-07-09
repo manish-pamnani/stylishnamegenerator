@@ -710,6 +710,12 @@ export default function BgmiNameStylePageContent() {
                 "500+ tested Unicode symbols and border pairs — copy paste for BGMI names.",
             },
             {
+              href: "/bgmi-stylish-names-list",
+              title: "BGMI Stylish Names List",
+              description:
+                "100+ curated BGMI names across cool, attitude, funny and girl styles.",
+            },
+            {
               href: "/free-fire-name-generator",
               title: "Free Fire Name Generator",
               description: "FF-compatible fonts, symbols, and a 20-char counter.",

@@ -17,6 +17,7 @@ export const SITEMAP_PATHS = [
   "/arabic-font-generator",
   "/wavy-text-generator",
   "/bgmi-symbols",
+  "/bgmi-stylish-names-list",
   "/nobita-nickname-style",
   "/psycho-stylish-name",
   "/biology-font-style",

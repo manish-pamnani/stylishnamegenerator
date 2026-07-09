@@ -262,6 +262,12 @@ export const NOBITA_CONFIG: ThemedNicknameConfig = {
         "Convert any name into cute Unicode fonts — perfect for Nobita-style BGMI names.",
     },
     {
+      href: "/bgmi-stylish-names-list",
+      title: "BGMI Names List 2025",
+      description:
+        "100+ curated BGMI names across cool, attitude, funny and girl styles — copy paste ready.",
+    },
+    {
       href: "/free-fire-name-generator",
       title: "Free Fire Name Generator",
       description:
@@ -345,6 +351,12 @@ export const PSYCHO_CONFIG: ThemedNicknameConfig = {
       href: "/bgmi-symbols",
       title: "BGMI Symbols",
       description: "Add psycho-style borders to your name with tested Unicode frames.",
+    },
+    {
+      href: "/bgmi-stylish-names-list",
+      title: "Attitude BGMI Names",
+      description:
+        "100+ curated BGMI names including a full attitude category — copy paste ready.",
     },
     {
       href: "/freestyle-nickname-generator",

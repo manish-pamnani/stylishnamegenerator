@@ -2085,6 +2085,100 @@ body {
   box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
 }
 
+/* BGMI stylish names list — quick filter bar, char-count badges, toggle. */
+.quick-filter-bar {
+  z-index: 20;
+}
+
+.quick-filter-bar__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  background: rgba(20, 18, 16, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+@media (min-width: 768px) {
+  .quick-filter-bar {
+    position: sticky;
+    top: 0.75rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .quick-filter-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.5rem 0.75rem calc(0.5rem + env(safe-area-inset-bottom));
+  }
+
+  .quick-filter-bar__inner {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    border-radius: 0.75rem;
+  }
+}
+
+.quick-filter-pill {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--cream-muted);
+  background: transparent;
+  transition: border-color 0.2s, color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.quick-filter-pill:hover {
+  border-color: var(--border-hover);
+  color: var(--cream);
+}
+
+.quick-filter-pill--active {
+  border-color: var(--neon-pink);
+  color: var(--night);
+  background: var(--neon-pink);
+  box-shadow: 0 0 18px var(--glow-pink);
+}
+
+.char-badge {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(200, 255, 0, 0.35);
+  color: var(--neon-lime);
+  background: var(--neon-lime-dim);
+  white-space: nowrap;
+}
+
+.char-toggle {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: var(--neon-cyan);
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed rgba(0, 232, 255, 0.45);
+  cursor: pointer;
+  padding: 0;
+}
+
+.char-toggle:hover {
+  color: var(--cream);
+  border-bottom-color: var(--cream);
+}
+
 /* Wavy text generator — featured output, style switcher, and use-case tiles. */
 .wavy-output {
   border: 1px solid rgba(0, 232, 255, 0.28);
